@@ -1,0 +1,12 @@
+body{
+    margin: 0 0 0 0;
+    padding: 0%;
+    background-color: rgb(90, 90, 90);/*Cor do fundo*/
+    font-family: 'Montserrat', sans-serif;/*fonte principal*/
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}

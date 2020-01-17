@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Roboto&display=swap" rel="stylesheet"> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+        <title>GHSB</title>
+    </head>
+    <body>
+        <h1>VENÇA E PODERÁ PROSSEGUIR</h1>
+        <div class = "tabuleiro">
+            <nav>
+                <ul>
+                    <li><button id = "posicao" onclick="u_joga(20)"></button></li>
+                    <li><button id = "posicao" onclick="u_joga(21)"></button></li>
+                    <li><button id = "posicao" onclick="u_joga(22)"></button></li>
+                </ul>
+                <ul>
+                    <li><button id = "posicao" onclick="u_joga(10)"></button></li>
+                    <li><button id = "posicao" onclick="u_joga(11)"></button></li>
+                    <li><button id = "posicao" onclick="u_joga(12)"></button></li>
+                </ul>
+                <ul>
+                    <li><button id = "posicao" onclick="u_joga(00)"></button></li>
+                    <li><button id = "posicao" onclick="u_joga(01)"></button></li>
+                    <li><button id = "posicao" onclick="u_joga(02)"></button></li>
+                </ul>
+            </nav>
+        </div>
+        <script>
+            class jg{
+                constructor()
+                {
+                    this._tab = [[0,0,0],[0,0,0],[0,0,0]];
+                }
+
+                get tab()
+                {
+                    return this._tab;
+                }
+
+                set tab(tab)
+                {
+                    this._tab = tab;
+                }
+            }
+            
+
+            class controle
+            {
+                //bloqueia as açoes do usuario para que ele nao possa jogar
+                bloqueia()
+                {
+
+                }
+                //verifica apenas se o usuario ganhou ou perdeu
+                verifica_fim()
+                {
+
+                }
+
+                //verifica se deu velha
+                verifica_velha()
+                {
+
+                }
+            }
+
+            class usuario
+            {
+                joga(lin, col)
+                {
+                    let tabu = { new: jogo.tab } 
+                    tabu.new[lin][col] = 1;
+                    jogo.tab = tabu.new;
+                }
+            }
+
+            class pc
+            {
+                joga()
+                {
+                    let tabu = { new: jogo.tab } 
+                    tabu.new[lin][col] = 1;
+                    jogo.tab = tabu.new; 
+                }
+
+            }
+
+            let u = new usuario;
+            let p = new pc;
+            let jogo = new jg();
+            
+            function u_joga (pos)
+            {
+                //converte e pega a posicao
+                let z = parseInt(pos, 10);
+                let lin = Math.trunc(z/10);
+                let col = z % 10;
+                //chama o metodo do usuario
+                u.joga(lin, col);
+                alert(jogo.tab);
+            }
+
+        </script>
+    </body>
+</html>
