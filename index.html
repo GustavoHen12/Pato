@@ -12,19 +12,19 @@
         <div class = "tabuleiro">
             <nav>
                 <ul>
-                    <li><button id = "posicao" onclick="u_joga(20)"></button></li>
-                    <li><button id = "posicao" onclick="u_joga(21)"></button></li>
-                    <li><button id = "posicao" onclick="u_joga(22)"></button></li>
+                    <li><button id = "20" onclick="u_joga('20')"></button></li>
+                    <li><button id = "21" onclick="u_joga('21')"></button></li>
+                    <li><button id = "22" onclick="u_joga('22')"></button></li>
                 </ul>
                 <ul>
-                    <li><button id = "posicao" onclick="u_joga(10)"></button></li>
-                    <li><button id = "posicao" onclick="u_joga(11)"></button></li>
-                    <li><button id = "posicao" onclick="u_joga(12)"></button></li>
+                    <li><button id = "10" onclick="u_joga('10')"></button></li>
+                    <li><button id = "11" onclick="u_joga('11')"></button></li>
+                    <li><button id = "12" onclick="u_joga('12')"></button></li>
                 </ul>
                 <ul>
-                    <li><button id = "posicao" onclick="u_joga(00)"></button></li>
-                    <li><button id = "posicao" onclick="u_joga(01)"></button></li>
-                    <li><button id = "posicao" onclick="u_joga(02)"></button></li>
+                    <li><button id = "00" onclick="u_joga('00')"></button></li>
+                    <li><button id = "01" onclick="u_joga('01')"></button></li>
+                    <li><button id = "02" onclick="u_joga('02')"></button></li>
                 </ul>
             </nav>
         </div>
@@ -49,28 +49,69 @@
 
             class controle
             {
-                //bloqueia as açoes do usuario para que ele nao possa jogar
-                bloqueia()
+                //verifica se ja tem alguma peca
+                disponivel(lin, col)
                 {
-
+                    let tabu = { new: jogo.tab };
+                    if(tabu.new[lin][col] == 0)
+                    {
+                        return true;
+                    } 
+                    else
+                    {
+                        return false;
+                    }
                 }
+
                 //verifica apenas se o usuario ganhou ou perdeu
                 verifica_fim()
                 {
+                    let tabu = jogo.tab;
+                    //------continuar
 
                 }
 
                 //verifica se deu velha
                 verifica_velha()
                 {
+                    let tabu = jogo.tab; 
+                    let veri = 0;
+                    for(let i = 0; i < 2; i++)
+                    {
+                        for(let j = 0; j < 2; j++)
+                        {
+                            if(tabu[i][j] !== 0)
+                            {
+                                veri++;
+                            }
 
+                        }
+                    }
+
+                    if(veri == 9)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
                 }
             }
 
             class usuario
             {
-                joga(lin, col)
+                joga(pos)
                 {
+                    //coloca no botao
+                    document.getElementById(pos).innerHTML = "X";
+                    document.getElementById(pos).disable = true; 
+
+                    //converte e pega a posicao
+                    let z = parseInt(pos, 10);
+                    let lin = Math.trunc(z/10);
+                    let col = z % 10;
+ 
                     let tabu = { new: jogo.tab } 
                     tabu.new[lin][col] = 1;
                     jogo.tab = tabu.new;
@@ -78,29 +119,62 @@
             }
 
             class pc
-            {
+            { 
                 joga()
                 {
-                    let tabu = { new: jogo.tab } 
-                    tabu.new[lin][col] = 1;
+                    let tabu = { new: jogo.tab };
+                    let pos = {
+                        lin : 0,
+                        col : 0
+                    }; 
+                    //"inteligencia"
+                    //acha um lugar livre aleatoriamente
+                    while(tabu.new[pos.lin][pos.col] !== 0)
+                    {
+                        pos.lin = Math.floor(Math.random() * (2 - 0 + 1)) + 0;
+                        pos.col = Math.floor(Math.random() * (2 - 0 + 1)) + 0;
+                    }
+                    //joga
+                    tabu.new[pos.lin][pos.col] = 2;
                     jogo.tab = tabu.new; 
+
+                    //configura no tabuleiro
+                    pos.lin = pos.lin * 10;
+                    pos.lin = pos.lin + pos.col;
+                    let pos_str = pos.lin.toString();
+                    console.log(pos_str);
+                    if(pos_str.length == 1){
+                        let zero = '0';
+                        document.getElementById(zero.concat(pos_str)).innerHTML = "O";
+                        document.getElementById(zero.concat(pos_str)).disable = true; 
+                    }
+                    else{
+                        document.getElementById(pos_str).innerHTML = "O";
+                        document.getElementById(pos_str).disable = true;
+                    } 
                 }
 
             }
 
             let u = new usuario;
             let p = new pc;
+            let ctrl = new controle;
             let jogo = new jg();
-            
+
             function u_joga (pos)
             {
-                //converte e pega a posicao
-                let z = parseInt(pos, 10);
-                let lin = Math.trunc(z/10);
-                let col = z % 10;
                 //chama o metodo do usuario
-                u.joga(lin, col);
-                alert(jogo.tab);
+                u.joga(pos);
+
+                //verifica fim do jogo
+                if(ctrl.verifica_fim && ctrl.verifica_velha)
+                {
+                    //pc joga
+                    p.joga();
+                    //verifica fim do jogo
+                    ctrl.verifica_fim;
+                }
+                
             }
 
         </script>
