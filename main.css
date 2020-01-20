@@ -10,3 +10,7 @@ ul{
     display: flex;
     align-items: center;
 }
+
+.ganha{
+    background-color: green;
+}
