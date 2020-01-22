@@ -1,7 +1,7 @@
 body{
     margin: 0 0 0 0;
     padding: 0%;
-    background-color: rgb(90, 90, 90);/*Cor do fundo*/
+    background-color: rgb(112, 112, 112);/*Cor do fundo*/
     font-family: 'Montserrat', sans-serif;/*fonte principal*/
 }
 
@@ -11,6 +11,302 @@ ul{
     align-items: center;
 }
 
+
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+/*JOGO DA VELHA*/
+.titulo_velha{
+    margin: 2em 2em auto 2em;
+    font-size: 15pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+.tabuleiro{
+    margin-top: 2em;
+    margin-right: 2em;
+
+    position: relative;
+    top: 6em;
+    text-align: center;
+    z-index: -1; 
+}
+
+.fundo_tabuleiro{
+    z-index: -2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: 1.2em;
+    transform: translate(-50%, -50%);
+    width: 11em;
+    height: auto;
+}
+
+.botao_tabuleiro{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.espaco{
+    border: none;
+    background-color: white;
+    opacity: 0.3;
+
+    margin: .2em .5em .2em .5em;
+    width: 2.5em;
+    height: 2.5em;
+    
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    color: black;
+    font-weight: 500;
+}
+
+.aviso{
+    font-size: 10pt;
+    position: absolute;
+    margin: auto;
+    top: auto;
+    right: .5em;
+    bottom: .5em;
+    left: auto;
+    color: rgb(90, 90, 90);;
+}
+
 .ganha{
-    background-color: green;
+    opacity: 1;
+}
+
+/* \ \ \ \ \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \  PAGINA PRINCIPAL / / / / / / / / / / / /  */
+nav{
+    margin: 0;
+    padding: 0%;   
+}
+.nav_bar{
+    background-color: black;
+    margin: 0;
+    padding: 0%;
+    overflow: hidden;
+
+}
+
+header{
+    height: 3em;
+}
+
+.nav_mob{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: -1em;
+    margin-right: 1em;
+    margin-top: .4em;
+    margin-bottom: 1em;
+}
+
+.item_nvbar{
+    text-decoration: none;
+    font-size: 12pt;
+}
+
+.menu_nvbar{
+    margin: 0;
+}
+.txt_forte{
+    font-weight: 800;
+}
+
+.branco{
+    color: white;
+}
+/*pagina principal*/
+.pagina_principal{
+    height: 100%;
+    width: 100%;
+}
+.pato{
+    height: 200px;
+    width: auto;
+    margin-top: 6em;
+}
+
+.cinza_escuro{
+    background-color: rgb(39, 38, 38);
+}
+
+.fundo_2pg{
+    margin-top: 18em;
+    position: relative;
+    top: 0;
+    z-index: -1;
+}
+
+
+
+.entre_paginas{
+    width: 100%;
+    height: 3em;
+    transform: skewY(-2deg);
+    margin-top: -1.7em;
+
+}
+
+.posiciona_ep1{
+    position: absolute;
+    top: .5em;
+    bottom: auto;
+}
+
+.posiciona_ep11{
+    position: absolute;
+    top: .5em;
+    bottom: auto;
+}
+.container_projetos{
+    text-align: center;
+    padding-bottom: 2em;
+}
+/*conteudo coisas legais*/
+.coisas_legais{
+    height: auto;
+    width: 100%;
+}
+.cl_content{
+    background-color: rgb(255, 255, 255);
+    margin: 1em;
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+.capa_projeto{
+    width: 45%;
+    height: auto;
+}
+.capa_projetoH{
+    height: auto;
+    width: 75%;
+
+}
+.info_txt{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.descricao_projeto{
+    font-weight: 500;
+}
+.link_projeto{
+    font-size: 11pt;
+    text-decoration: none;
+    color: #000;
+    margin-left: .5em;
+    margin-right: .5em;
+    margin-top: 1.5em;
+}
+
+.linha{
+    width: 40%;
+    margin-bottom: 1em;
+}
+
+/*CONTATOS*/
+.preto{
+    color: black;
+}
+.cinza_claro{
+    background-color: rgb(207, 189, 189);
+}
+.container_contatos{
+    text-align: center;
+    display: block;
+}
+.fundo_3pg{
+    background-color: rgb(207, 189, 189);
+    position: relative;
+    top: -1em;
+    z-index: 1;/*so funciona com elementos posicionados*/
+}
+.posiciona_ep2{
+    position: absolute;
+    top: 0em;
+    transform: rotate(181deg);
+    
+}
+.contatos{
+    margin-top: 2em;
+}
+
+/*contatos*/
+.contact_content{
+    text-align: center;
+    padding-bottom: 2em;
+}
+.grade{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 1.5em;
+}
+.contato_logo{
+    width: 30%;
+    height: auto;
+}
+
+.contato_descr{
+    font-weight: 500;
+    color: white;
+}
+
+.contato_link{
+    text-decoration: none;
+    color: white;
+}
+.branco_bk{
+    background-color: white;
+}
+.vermelho_bk{
+    background-color: rgb(240, 25, 25);
+}
+.preto_ft{
+    color: black;
+}
+
+/*rodape*/
+footer{
+    background-color: black;
+    height: 6em;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    
+}
+.icone_final{
+    width: 25%;
+    height: auto;
+    margin-right: 5em;
+    margin-left: auto;
+}
+
+.link_final{
+    color: white;
+    font-weight: 600;
+    font-size: 15pt;
+    text-decoration: none;
+    margin-left: 5em;
+    margin-right: auto;
+}
+.linha_final{
+    width: 5em;
+    transform: rotate(90deg);
+    margin: 1em;
 }

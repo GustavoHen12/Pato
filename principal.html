@@ -1,16 +1,100 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Roboto&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,800,900" rel="stylesheet"> 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="main.css">
+
         <title>GHSB</title>
     </head>
     <body>
-        <h1>BEM VINDO A PAGINA</h1>
-        <div class = "tabuleiro">
-            
+        <header class = "nav_bar">
+            <nav>
+                <ul class = "show_mobile hide_desktop nav_mob">
+                    <li><a class = "item_nvbar txt_forte branco" href = "#">HOME</a></li>
+                    <li><a class = "menu_nvbar" href="javascript:void(0)" onclick="myFunction()"><img src="img/icone_menu.svg" alt="icone menu"></a></li>
+                </ul>
+            </nav>
+        </header>
+        <!--PAGINA PRINCIPAL-->
+        <div class = "container pagina_principal">
+            <img class = "pato" src= "img/pato.svg" alt="pato">
         </div>
+        
+        <!--COISAS LEGAIS-->
+        <div class = "container_projetos cinza_escuro">
+            <!--LINHA CURVAcinza_escuro-->
+            <div class = "fundo_2pg">
+                <div class = "entre_paginas cinza_escuro posiciona_ep1"></div>
+                <div class = "complemento cinza_escuro posiciona_ep11"></div>
+            </div>
+
+            <div class = "coisas_legais">
+                <h2 class = "txt_forte branco">COISAS LEGAIS</h2>
+
+                <div class = "cl_content">
+                    <img class = "capa_projeto" src = "img/cl1.png" alt="logo microscopia">
+                    <div class = "info_txt preto">
+                        <h3 class = "titulo_projeto">PROJETO MICROSCOPIA IN SITU</h3>
+                        <p class = "descricao_projeto">Aplicativo de Processamento de Imagens para utilização em Microscopia in situ de baixo custo</p>
+                        <hr class = "linha">
+                        <a class = "link_projeto" href="#">Documentacao</a>
+                        <a class = "link_projeto" href="#">Manual</a>
+                        <a class = "link_projeto" href="#">Github</a>
+                    </div>
+                </div>
+                <div class = "cl_content">
+                    <img class = "capa_projeto" src = "img/cl2.png" alt="goodie">
+                    <div class = "info_txt">
+                        <h3 class = "titulo_projeto">Alimentador Goodie</h3>
+                        <p class = "descricao_projeto">Alimentador automatico para pets</p>
+                        <hr class = "linha">
+                        <a class = "link_projeto" href="#">Saiba mais</a>
+                    </div>
+                </div>
+                <div class = "cl_content">
+                    <img class = "capa_projetoH" src = "img/cl3.jpg" alt="space invader">
+                    <div class = "info_txt">
+                        <h3 class = "titulo_projeto">Space Invader</h3>
+                        <p class = "descricao_projeto">Jogo realizado para a disciplina de Progamação, utilizando C e ncurse</p>
+                        <hr class = "linha">
+                        <a class = "link_projeto" href="#">Github</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--CONTATOS-->
+        <div class = "container_contatos cinza_claro">
+            <!--LINHA CURVA-->
+            <div class = "fundo_3pg">
+                <div class = "entre_paginas cinza_claro posiciona_ep2"></div>
+                <div class = "complemento posiciona_ep22"></div>
+            </div>
+
+            <div class = "contatos frente">
+                <h2 class = "txt_forte preto">CONTATOS</h2>
+                <div class = "contact_content">
+                    <div class = "grade cinza_escuro">
+                        <img class = "contato_logo" src = "img/github.svg" alt = "github logo">
+                        <p class = "contato_descr">Github: <a class = "contato_link" href="#">github.com/GustavoHen12/</a></p>
+                    </div>
+                    <div class = "grade vermelho_bk">
+                        <img class = "contato_logo" src = "img/gmail.png" alt = "gmail logo">
+                        <p class = "contato_descr">Gmail: <a class = "contato_link" href="#">gus_henreique12.gh@gmail.com</a></p>
+                    </div>
+                    <div class = "grade branco_bk">
+                        <img class = "contato_logo" src = "img/email.svg" alt = "email logo">
+                        <p class = "contato_descr preto_ft">DINF: <a class = "preto_ft contato_link" href="#">ghsb19@inf.ufpr.br</a></p>
+                        <p class = "contato_descr preto_ft">UFPR: <a class = "preto_ft contato_link" href="#">gustavo.barbosa@ufpr.br</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class = "preto_bk">
+            <a class = "link_final" href = "#">DINF</a>
+            <hr class = "linha_final">
+            <a href = "#"><img class = "icone_final" src = "img/logo_ufpr.png" alt="logo ufpr"></a>
+        </footer>
     </body>
 </html>

@@ -8,26 +8,33 @@
         <title>GHSB</title>
     </head>
     <body>
-        <h1>VENÇA E PODERÁ PROSSEGUIR</h1>
-        <div class = "tabuleiro">
-            <nav>
-                <ul>
-                    <li><button id = "20" onclick="u_joga('20')"></button></li>
-                    <li><button id = "21" onclick="u_joga('21')"></button></li>
-                    <li><button id = "22" onclick="u_joga('22')"></button></li>
-                </ul>
-                <ul>
-                    <li><button id = "10" onclick="u_joga('10')"></button></li>
-                    <li><button id = "11" onclick="u_joga('11')"></button></li>
-                    <li><button id = "12" onclick="u_joga('12')"></button></li>
-                </ul>
-                <ul>
-                    <li><button id = "00" onclick="u_joga('00')"></button></li>
-                    <li><button id = "01" onclick="u_joga('01')"></button></li>
-                    <li><button id = "02" onclick="u_joga('02')"></button></li>
-                </ul>
-            </nav>
+        <div class = "container">
+            <h1 class = "titulo_velha">Vença e poderá prosseguir</h1>
+            <div class = "tabuleiro">
+                <div>
+                    <img class = fundo_tabuleiro src = "img/fundo_velha.svg" alt="fundo jogo da velha">
+                </div>
+                <nav class = "botao_tabuleiro">
+                    <ul>
+                        <li><button class = "espaco" id = "20" onclick="u_joga('20')"></button></li>
+                        <li><button class = "espaco" id = "21" onclick="u_joga('21')"></button></li>
+                        <li><button class = "espaco" id = "22" onclick="u_joga('22')"></button></li>
+                    </ul>
+                    <ul>
+                        <li><button class = "espaco" id = "10" onclick="u_joga('10')"></button></li>
+                        <li><button class = "espaco" id = "11" onclick="u_joga('11')"></button></li>
+                        <li><button class = "espaco" id = "12" onclick="u_joga('12')"></button></li>
+                    </ul>
+                    <ul>
+                        <li><button class = "espaco" id = "00" onclick="u_joga('00')"></button></li>
+                        <li><button class = "espaco" id = "01" onclick="u_joga('01')"></button></li>
+                        <li><button class = "espaco" id = "02" onclick="u_joga('02')"></button></li>
+                    </ul>
+                </nav>
+                
+            </div>
         </div>
+        <p class = "aviso"> ou pressione seta esquerda</p>
         <script src="velha.js"></script>
         <script>
             document.addEventListener('keydown', function(event) {

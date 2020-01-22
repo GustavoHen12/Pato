@@ -21,11 +21,11 @@ class controle
     fimDeJogo(ganhador)
     {
         if(ganhador == 1){
-            alert("parabens voce ganhou");
+            alert("Parabéns, você é digno");
             window.location.href = "principal.html";
         }
         else{
-            alert("lamento, você é indigno de continuar");
+            alert("Lamento, você é indigno de continuar");
             location.reload();
         }
 
@@ -239,6 +239,10 @@ class pc
 
 }
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 let u = new usuario;
 let p = new pc;
 let ctrl = new controle;
@@ -248,7 +252,8 @@ let res = {
     fim : false,
     ganhador: 0
 }
-function u_joga (pos)
+
+async function u_joga (pos)
 {
     if (res.fim == false)
     {
@@ -272,7 +277,8 @@ function u_joga (pos)
     //mensagens se alguem ganhou
     if((res.ganhador != 0) || res.fim)
     {
-        setTimeout(ctrl.fimDeJogo(res.ganhador), 2000);
+        await sleep(2000);
+        ctrl.fimDeJogo(res.ganhador);
     }
     
 }
