@@ -89,9 +89,11 @@ ul{
 /* \ \ \ \ \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \  PAGINA PRINCIPAL / / / / / / / / / / / /  */
 nav{
     margin: 0;
-    padding: 0%;   
+    padding: 0%;
 }
 .nav_bar{
+    position: sticky;
+    top: 0;
     background-color: black;
     margin: 0;
     padding: 0%;
@@ -309,4 +311,33 @@ footer{
     width: 5em;
     transform: rotate(90deg);
     margin: 1em;
+}
+
+/*submenu*/
+
+.submenu_mobi{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    left: auto;
+    top: em;
+    background-color: black;
+    z-index: 3;
+    text-align: left;
+}
+
+.submenu_item{
+    margin-left: 1em;
+    margin-top: 1em;
+    margin-bottom: .5em;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.hide{
+    display: none;
 }
