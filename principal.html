@@ -11,19 +11,32 @@
     <body>
         <header class = "nav_bar">
             <nav>
+                <!--nav mobile-->
                 <ul class = "show_mobile hide_desktop nav_mob">
                     <li><a class = "item_nvbar txt_forte branco" href = "#">HOME</a></li>
-                    <li><a class = "menu_nvbar" href="javascript:void(0)" onclick="myFunction()"><img src="img/icone_menu.svg" alt="icone menu"></a></li>
+                    <li><a class = "menu_nvbar" href="javascript:void(0)" onclick="submenu()"><img src="img/icone_menu.svg" alt="icone menu"></a></li>
                 </ul>
+                <!--nav desltop-->
+                <ul class = "show_desktop hide_mobile nav_desk">
+                    <li><a id = "home_b" class = "item_nvbar txt_forte" href = "#HOME">HOME</a></li>
+                    <li><a id = "coisasl_b" class = "item_nvbar txt_forte" href = "#COISAS_LEGAIS">COISAS LEGAIS</a></li>
+                    <li><a id = "contatos_b" class = "item_nvbar txt_forte" href = "#CONTATOS">CONTATOS</a></li>
+                 </ul>
             </nav>
         </header>
+        <div class = "submenu_mobi hide" id = "submenu_show">
+            <a class = "submenu_item txt_forte branco"  onclick="submenu()" href = "#">COISAS LEGAIS</a>
+            <a class = "submenu_item txt_forte branco"  onclick="submenu()" href = "#">CONTATOS</a>
+        </div>
+        
         <!--PAGINA PRINCIPAL-->
-        <div class = "container pagina_principal">
+        <div class = "pagina_principal" id = "HOME">
             <img class = "pato" src= "img/pato.svg" alt="pato">
+            <a class = "show_desktop hide_mobile" href = "#"><img class = "down" src="img/down.svg" alt="va para baixo"></a>
         </div>
         
         <!--COISAS LEGAIS-->
-        <div class = "container_projetos cinza_escuro">
+        <div id = "COISAS_LEGAIS" class = "container_projetos cinza_escuro">
             <!--LINHA CURVAcinza_escuro-->
             <div class = "fundo_2pg">
                 <div class = "entre_paginas cinza_escuro posiciona_ep1"></div>
@@ -31,26 +44,25 @@
             </div>
 
             <div class = "coisas_legais">
-                <h2 class = "txt_forte branco">COISAS LEGAIS</h2>
-
+                <h2 class = "txt_forte branco hide_desktop">COISAS LEGAIS</h2>
                 <div class = "cl_content">
                     <img class = "capa_projeto" src = "img/cl1.png" alt="logo microscopia">
                     <div class = "info_txt preto">
                         <h3 class = "titulo_projeto">PROJETO MICROSCOPIA IN SITU</h3>
                         <p class = "descricao_projeto">Aplicativo de Processamento de Imagens para utilização em Microscopia in situ de baixo custo</p>
                         <hr class = "linha">
-                        <a class = "link_projeto" href="#">Documentacao</a>
-                        <a class = "link_projeto" href="#">Manual</a>
+                        <a class = "link_projeto" href="https://docs.google.com/document/d/1U4e2Jz1f1Y_6OvrcqyIgka-zRvUmGHvsMKHGA-l3zok/edit?usp=sharing">Documentacao</a>
+                        <a class = "link_projeto" href="https://docs.google.com/document/d/1laAMxJNdZKmoeuTNDGrJj_eX-UJfX0_uE6JA3opMb1M/edit?usp=sharing">Manual</a>
                         <a class = "link_projeto" href="#">Github</a>
                     </div>
                 </div>
                 <div class = "cl_content">
-                    <img class = "capa_projeto" src = "img/cl2.png" alt="goodie">
+                    <img class = " pequeno capa_projeto " src = "img/cl2.png" alt="goodie">
                     <div class = "info_txt">
                         <h3 class = "titulo_projeto">Alimentador Goodie</h3>
                         <p class = "descricao_projeto">Alimentador automatico para pets</p>
                         <hr class = "linha">
-                        <a class = "link_projeto" href="#">Saiba mais</a>
+                        <a class = "link_projeto" href="https://docs.google.com/presentation/d/1kI0yNtzpNmSUT6F2naX5RtUFTPCYCFCQCqMh5DBM_lo/edit?usp=sharing">Saiba mais</a>
                     </div>
                 </div>
                 <div class = "cl_content">
@@ -69,32 +81,124 @@
             <!--LINHA CURVA-->
             <div class = "fundo_3pg">
                 <div class = "entre_paginas cinza_claro posiciona_ep2"></div>
-                <div class = "complemento posiciona_ep22"></div>
+                <div class = "complemento cinza_claro"></div>
             </div>
 
-            <div class = "contatos frente">
-                <h2 class = "txt_forte preto">CONTATOS</h2>
+            <div class = "contatos" id = "CONTATOS">
+                <h2 class = "txt_forte preto hide_desktop">CONTATOS</h2>
+                
                 <div class = "contact_content">
-                    <div class = "grade cinza_escuro">
-                        <img class = "contato_logo" src = "img/github.svg" alt = "github logo">
-                        <p class = "contato_descr">Github: <a class = "contato_link" href="#">github.com/GustavoHen12/</a></p>
+                    <div class = "contato_grade">
+                        <div class = "grade cinza_escuro">         
+                            <img class = "contato_logo" src = "img/github.svg" alt = "github logo">
+                            <p class = "contato_descr">Github: <a class = "contato_link" href="https://github.com/GustavoHen12">github.com/GustavoHen12/</a></p>
+                        </div>
+                        <div class = "diagonal cinza_escuro"></div>
                     </div>
-                    <div class = "grade vermelho_bk">
-                        <img class = "contato_logo" src = "img/gmail.png" alt = "gmail logo">
-                        <p class = "contato_descr">Gmail: <a class = "contato_link" href="#">gus_henreique12.gh@gmail.com</a></p>
+                    
+                    <div class = "contato_grade">
+                        <div class = "grade vermelho_bk">
+                            <p class = "contato_descr">Gmail: <a class = "contato_link" href="https://www.google.com/intl/pt/gmail/about/">gus_henreique12.gh@gmail.com</a></p>
+                            <img class = "contato_logo" src = "img/gmail.png" alt = "gmail logo">
+                        </div>
                     </div>
-                    <div class = "grade branco_bk">
-                        <img class = "contato_logo" src = "img/email.svg" alt = "email logo">
-                        <p class = "contato_descr preto_ft">DINF: <a class = "preto_ft contato_link" href="#">ghsb19@inf.ufpr.br</a></p>
-                        <p class = "contato_descr preto_ft">UFPR: <a class = "preto_ft contato_link" href="#">gustavo.barbosa@ufpr.br</a></p>
+
+                    <div class = "contato_grade">
+                        <div class = "diagonal2 branco_bk"></div>
+                        <div class = "grade branco_bk">
+                            <img class = "contato_logo" src = "img/email.svg" alt = "email logo">
+                            <div class = "txt">
+                                <p class = "contato_descr preto_ft">DINF: <a class = "preto_ft contato_link" href="https://webmail.c3sl.ufpr.br/">ghsb19@inf.ufpr.br</a></p>
+                                <p class = "contato_descr preto_ft">UFPR: <a class = "preto_ft contato_link" href="https://outlook.live.com/owa/">gustavo.barbosa@ufpr.br</a></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <footer class = "preto_bk">
-            <a class = "link_final" href = "#">DINF</a>
-            <hr class = "linha_final">
-            <a href = "#"><img class = "icone_final" src = "img/logo_ufpr.png" alt="logo ufpr"></a>
+            <a class = "link_final" href = "https://web.inf.ufpr.br/dinf/">DINF</a>
+            <hr class = "linha_final hide_desktop">
+            <a class = "iconeFinal_area" href = "https://www.ufpr.br/portalufpr/"><img class = "icone_final" src = "img/logo_ufpr.png" alt="logo ufpr"></a>
         </footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        
+        <script>
+            /*aparecer menu mobile*/
+            function submenu()
+            {
+                let menu = document.getElementById("submenu_show");
+                if(menu.style.display == "none"){                    
+                    menu.style.display = "block";                    
+                }
+                else{                    
+                    menu.style.display = "none";                    
+                }
+            }
+        </script>
+        
+        <script>
+            /*rolagem desktop*/
+            let home = document.getElementById("home_b");
+            home.style.color = "white";
+            let coisas = document.getElementById("coisasl_b");
+            coisas.style.color = "rgb(112, 112, 112)";            
+            let contat = document.getElementById("contatos_b");
+            contat.style.color = "rgb(112, 112, 112)";
+
+            $(window).scroll(function() {
+                var scrollCoisasLegais = $('.capa_projeto').offset().top - $(window).height();
+                var scrollContatos = $('.contatos').offset().top - $(window).height();
+                var scrollHome = $('.pagina_principal').offset().top - $(window).height();
+                if(($(window).scrollTop() > scrollHome)&&($(window).scrollTop() < scrollCoisasLegais)){
+                    contat.style.color = "rgb(112, 112, 112)";
+                    coisas.style.color = "rgb(112, 112, 112)";            
+                    home.style.color = "white";
+                }
+                if (($(window).scrollTop() > scrollCoisasLegais)&&($(window).scrollTop() < scrollContatos)) {
+                    home.style.color = "rgb(112, 112, 112)";
+                    coisas.style.color = "white";
+                    contat.style.color = "rgb(112, 112, 112)";
+                }
+                if($(window).scrollTop() > scrollContatos){
+                    home.style.color = "rgb(112, 112, 112)";
+                    coisas.style.color = "rgb(112, 112, 112)";
+                    contat.style.color = "white";
+                }
+            }
+            )
+        </script>
+        
+        <script>
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            $(".cl_content").on( {
+            'mouseenter':async function ()
+            {
+                if($(window).width() > 560){
+                    if($(this).css("margin-left") == "0px"){
+                        $(this).css("background", "white");
+                        for(let valor = 0; valor <= 5; valor++){
+                            let temp = (-1*valor/10).toString();
+                            let valor_str = temp.concat("em");
+                            $(this).css("margin-left", valor_str);
+                            $(this).css("marginRight", valor_str);
+                            await sleep(20);
+                        }                
+                    }
+                }
+            },
+            'mouseleave':async function diminui() {
+                if($(window).width() > 560){ 
+                    $(this).css("marginLeft", "0em");
+                    $(this).css("marginRight", "0em");
+                    $(this).css("background", "rgb(161, 161, 161)");
+                }
+             }
+            });
+        </script>
     </body>
 </html>
