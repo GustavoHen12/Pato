@@ -138,11 +138,15 @@ header{
 .pagina_principal{
     height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
 }
 .pato{
     height: 200px;
     width: auto;
     margin-top: 6em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cinza_escuro{
@@ -187,6 +191,8 @@ header{
 .cl_content{
     background-color: rgb(255, 255, 255);
     margin: 1em;
+    margin-right: 1em;
+    margin-left: 1em;
     padding-bottom: 2em;
     padding-top: 2em;
 }
@@ -198,7 +204,6 @@ header{
 .capa_projetoH{
     height: auto;
     width: 75%;
-
 }
 .info_txt{
     margin-left: 1em;
@@ -400,9 +405,15 @@ footer{
         height: auto;
         display: flex;
         align-items: center;
+        justify-content: center;
         margin: 0;
         padding: 1.5em;
         background-color: rgb(161, 161, 161);
+    }
+
+    .info_txt{
+        margin-left: 2em;
+        margin-right: auto;
     }
     /*
     .cl_content:hover{
@@ -456,7 +467,7 @@ footer{
     .diagonal2{
         width: auto;
         height: 2.5em;
-        transform: rotate(2deg);
+        transform: rotate(1.2deg);
         margin-top: -1.3em;
         margin-bottom: -1.3em;
     }
@@ -490,7 +501,25 @@ footer{
 }
 
 @media screen and (min-width: 860px){
-    body{
-        background-color: red;
+    .posiciona_ep1{
+        top:-0.5em;
+        height: 4em;
+    }
+    .coisas_legais, .contact_content{
+        max-width: 860px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .capa_projeto{
+        width: 25%;
+        height: auto;
+    }
+    .pequeno{
+        margin-right: auto;
+    }
+    .icone_final{
+        width: 20%;
+        height: auto;
     }
 }
