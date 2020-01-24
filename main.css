@@ -11,12 +11,15 @@ ul{
     align-items: center;
 }
 
-
 .container{
     display: flex;
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
+}
+
+.cinza_tx{
+    color: rgb(112, 112, 112);
 }
 
 /*JOGO DA VELHA*/
@@ -94,6 +97,7 @@ nav{
 .nav_bar{
     position: sticky;
     top: 0;
+    z-index: 10;
     background-color: black;
     margin: 0;
     padding: 0%;
@@ -400,7 +404,7 @@ footer{
         padding: 1.5em;
         background-color: rgb(161, 161, 161);
     }
-
+    /*
     .cl_content:hover{
         background-color: rgb(230, 230, 230);
         margin-left: -.5em;
@@ -409,7 +413,7 @@ footer{
         padding-right: 2em;
         opacity: 1;
         box-shadow: 3px -1px 43px -12px rgba(0,0,0,0.75);
-    }
+    }*/
 
     .pequeno{
         width: 30%;
@@ -430,9 +434,63 @@ footer{
         width: 100%;
         height: 1em;
     }
-
+    /*curva*/
+    .contato_grade{
+        margin-left: 2em;
+        margin-right: 2em;
+    }
     .grade{
-        border-bottom: 10px solid red;
-        border-right: 10px solid transparent;
+        margin-left: 0;
+        margin-right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .diagonal{
+        width: auto;
+        height: 2.5em;
+        transform: skewY(-2deg);
+        margin-top: -1.3em;
+        margin-bottom: -1.3em;
+    }
+    .diagonal2{
+        width: auto;
+        height: 2.5em;
+        transform: rotate(2deg);
+        margin-top: -1.3em;
+        margin-bottom: -1.3em;
+    }
+    .contato_logo{
+        width: 20%;
+        height: auto;
+        margin: 2em;
+    }
+    .txt{
+        text-align: left;
+    }
+    /*rodape*/
+    footer{
+        display: flex;
+        align-items: left;
+        overflow: hidden;
+    }
+    .icone_final{
+        width: 50%;
+        margin-left:1em;
+    }
+    .iconeFinal_area{
+        margin-left: 1em;
+        width: 30%;
+    }
+    .link_final{
+        margin-left: 2em;
+        margin-right: 1em;
+        font-size: 20pt;
+    }
+}
+
+@media screen and (min-width: 860px){
+    body{
+        background-color: red;
     }
 }
