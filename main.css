@@ -288,6 +288,28 @@ header{
 .preto_ft{
     color: black;
 }
+.txt{
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.botao_cp{
+    display: flex;
+    align-items: center;
+}
+.copyButton{
+    border: none;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    background-color: white;
+    opacity: .6;
+    padding: .2em;
+    cursor: pointer;
+    margin-left: .7em;
+    margin-right: .7em;
+}
 
 /*rodape*/
 footer{
@@ -361,7 +383,19 @@ footer{
         display: none;
     }
 
+    .nav_bar{
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background-color: black;
+        margin: 0;
+        padding: 0%;
+        overflow: hidden;
+    
+    }
+    
     .nav_desk{
+        margin-left: -3em;
         display: flex;
         align-items: center;
         text-align: center;
@@ -372,6 +406,7 @@ footer{
         margin-left: 1em;
         margin-right: 1em;
     }
+
     /*capa*/
     .pagina_principal{
         display: flex;
@@ -409,22 +444,20 @@ footer{
         margin: 0;
         padding: 1.5em;
         background-color: rgb(161, 161, 161);
+
+        /*configura trasicao*/
+        transition: margin 0.3s, background-color 0.3s;
     }
 
+    .cl_content:hover{
+        background-color: white;
+        margin-left: -.5em;
+        margin-right: -.5em;
+    }
     .info_txt{
         margin-left: 2em;
         margin-right: auto;
     }
-    /*
-    .cl_content:hover{
-        background-color: rgb(230, 230, 230);
-        margin-left: -.5em;
-        margin-right: -.5em;
-        padding-left: 2em;
-        padding-right: 2em;
-        opacity: 1;
-        box-shadow: 3px -1px 43px -12px rgba(0,0,0,0.75);
-    }*/
 
     .pequeno{
         width: 30%;

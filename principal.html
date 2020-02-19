@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="main.css">
-
+        <script src="https://kit.fontawesome.com/fa1d18cd54.js" crossorigin="anonymous"></script>
         <title>GHSB</title>
     </head>
     <body>
@@ -45,6 +45,7 @@
 
             <div class = "coisas_legais">
                 <h2 class = "txt_forte branco hide_desktop">COISAS LEGAIS</h2>
+               
                 <div class = "cl_content">
                     <img class = "capa_projeto" src = "img/cl1.png" alt="logo microscopia">
                     <div class = "info_txt preto">
@@ -57,21 +58,21 @@
                     </div>
                 </div>
                 <div class = "cl_content">
-                    <img class = " pequeno capa_projeto " src = "img/cl2.png" alt="goodie">
+                    <img class = "capa_projeto" src = "img/cl2.png" alt="goodie">
                     <div class = "info_txt">
                         <h3 class = "titulo_projeto">Alimentador Goodie</h3>
-                        <p class = "descricao_projeto">Alimentador automatico para pets</p>
+                        <p class = "descricao_projeto">Alimentador automático para pets de baixo custo controlado por smartphone</p>
                         <hr class = "linha">
                         <a class = "link_projeto" href="https://docs.google.com/presentation/d/1kI0yNtzpNmSUT6F2naX5RtUFTPCYCFCQCqMh5DBM_lo/edit?usp=sharing">Saiba mais</a>
                     </div>
                 </div>
                 <div class = "cl_content">
-                    <img class = "capa_projetoH" src = "img/cl3.jpg" alt="space invader">
+                    <img class = "capa_projeto" src = "img/cl3.svg" alt="space invader">
                     <div class = "info_txt">
                         <h3 class = "titulo_projeto">Space Invader</h3>
                         <p class = "descricao_projeto">Jogo realizado para a disciplina de Progamação, utilizando C e ncurse</p>
                         <hr class = "linha">
-                        <a class = "link_projeto" href="#">Github</a>
+                        <a class = "link_projeto" href="https://github.com/GustavoHen12/bowerbird/tree/master/SpaceInvader">Github</a>
                     </div>
                 </div>
             </div>
@@ -92,14 +93,16 @@
                         <div class = "grade cinza_escuro">         
                             <img class = "contato_logo" src = "img/github.svg" alt = "github logo">
                             <p class = "contato_descr">Github: <a class = "contato_link" href="https://github.com/GustavoHen12">github.com/GustavoHen12/</a></p>
+                            <!--<button class = "copyButton" onclick="copyToClipboard()"><i class="far fa-copy"></i></button>-->
                         </div>
                         <div class = "diagonal cinza_escuro"></div>
                     </div>
                     
                     <div class = "contato_grade">
                         <div class = "grade vermelho_bk">
+                            <!--<button class = "copyButton" onclick="copyToClipboard()"><i class="far fa-copy"></i></button>-->
                             <p class = "contato_descr">Gmail: <a class = "contato_link" href="https://www.google.com/intl/pt/gmail/about/">gus_henreique12.gh@gmail.com</a></p>
-                            <img class = "contato_logo" src = "img/gmail.png" alt = "gmail logo">
+                            <img class = "contato_logo" src = "img/gmail.svg" alt = "gmail logo">
                         </div>
                     </div>
 
@@ -171,34 +174,21 @@
         </script>
         
         <script>
-            function sleep(ms) {
-                return new Promise(resolve => setTimeout(resolve, ms));
-            }
+            //incompleta
+            function copyToClipboard() {
+                /* Get the text field */
+                var copyText = document.getElementById("myInput");
 
-            $(".cl_content").on( {
-            'mouseenter':async function ()
-            {
-                if($(window).width() > 560){
-                    if($(this).css("margin-left") == "0px"){
-                        $(this).css("background", "white");
-                        for(let valor = 0; valor <= 5; valor++){
-                            let temp = (-1*valor/10).toString();
-                            let valor_str = temp.concat("em");
-                            $(this).css("margin-left", valor_str);
-                            $(this).css("marginRight", valor_str);
-                            await sleep(20);
-                        }                
-                    }
+                /* Select the text field */
+                copyText.select();
+                copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+                /* Copy the text inside the text field */
+                document.execCommand("copy");
+
+                /* Alert the copied text */
+                alert("Copied the text: " + copyText.value);
                 }
-            },
-            'mouseleave':async function diminui() {
-                if($(window).width() > 560){ 
-                    $(this).css("marginLeft", "0em");
-                    $(this).css("marginRight", "0em");
-                    $(this).css("background", "rgb(161, 161, 161)");
-                }
-             }
-            });
         </script>
     </body>
 </html>
